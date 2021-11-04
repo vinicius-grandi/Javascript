@@ -5,12 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagens</title>
+    <style>
+        main input {
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold
+        }
+    </style>
 </head>
 <body>
     <main>
-        <input type="button" value="">
-        <input type="button" value="">
-        <input type="button" value="">
+        <h1>Desafio das Mensagens</h1>
+        <input type="button" value="Botão 1" id="bu1">
+        <input type="button" value="Botão 2" id="bu2">
+        <input type="button" value="Botão 3" id="bu3">
     </main>
+    <script>
+        var bu1 = document.getElementById('bu1')
+        var bu2 = document.getElementById('bu2')
+        var bu3 = document.getElementById('bu3')
+
+        bu1.addEventListener('click', jan1)
+        bu2.addEventListener('click', jan2)
+        bu3.addEventListener('click', jan3)
+
+        function jan1(){
+            alert('Você clicou no 2° botão!')
+        } 
+        function jan2(){
+            alert('Você clicou no 2° botão!')
+        }
+        function jan3(){
+            alert('Você clicou no 3° botão!')
+        }
+
+    </script>
 </body>
 </html>

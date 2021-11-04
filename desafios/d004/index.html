@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <style>
+        input {
+            padding: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Antes e depois</h1>
+        <input type="button" value="Comprar produto" id="bu" onclick="p()">
+    </main>
+    <script>
+        function p(){
+        var pname = prompt('Que produto você está comprando?')
+
+        var pprice = Number(prompt(`Quanto custa ${pname} que você está comprando?`))
+
+        var paid = Number(prompt(`Qual foi o valor que você deu para pagar ${pname}?`))
+        
+        var change = paid - pprice 
+
+        pprice = pprice.toLocaleString('pt-br' , {style: 'currency', currency: 'BRL'})
+        paid = paid.toLocaleString('pt-br' , {style: 'currency', currency: 'BRL'})
+        change = change.toLocaleString('pt-br' , {style: 'currency', currency: 'BRL'}) 
+        
+
+        alert(`Você comprou ${pname} que custou ${pprice}.\rDeu ${paid} em dinheiro e vai receber ${change} de troco.\rVolte sempre!`)
+        }
+    </script>
+</body>
+</html>
