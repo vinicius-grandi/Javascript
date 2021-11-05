@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        div {
+            background-color: black;
+            color: whitesmoke;
+            width: 420px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+        <h1>Sistema de Multas</h1>
+        Velocidade do carro:<input type="number" value="txtvel1" id="txtvel1"> Km/h
+        <input type="button" value="Verificar" onclick="calcular()">
+        <div id="res">
+            Resultado
+        </div>
+    <script>
+        function calcular() {
+            var txtvel = document.querySelector('#txtvel1')
+            vel = Number(txtvel.value)
+            var res = document.querySelector('#res')
+            
+            if(vel > 80) {
+                res.innerHTML = '<p> Você está indo muito rápido campeão.</p>'
+            } else {
+                res.innerHTML = '<p>Muito lento, maricas.</p>'
+            }
+        }
+    </script>
+</body>
+</html>

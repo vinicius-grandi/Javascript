@@ -16,27 +16,22 @@
 <body>
     <main>
         <h1>Desafio das Mensagens</h1>
-        <input type="button" value="Botão 1" id="bu1">
-        <input type="button" value="Botão 2" id="bu2">
-        <input type="button" value="Botão 3" id="bu3">
+        <input type="button" value="Botão 1" id="1°">
+        <input type="button" value="Botão 2" id="2°">
+        <input type="button" value="Botão 3" id="3°">
     </main>
     <script>
-        var bu1 = document.getElementById('bu1')
-        var bu2 = document.getElementById('bu2')
-        var bu3 = document.getElementById('bu3')
-
+        var bu1 = document.getElementById('1°')
+        var bu2 = document.getElementById('2°')
+        var bu3 = document.getElementById('3°')
         bu1.addEventListener('click', jan1)
-        bu2.addEventListener('click', jan2)
-        bu3.addEventListener('click', jan3)
+        bu2.addEventListener('click', jan1)
+        bu3.addEventListener('click', jan1)
 
-        function jan1(){
-            alert('Você clicou no 2° botão!')
-        } 
-        function jan2(){
-            alert('Você clicou no 2° botão!')
-        }
-        function jan3(){
-            alert('Você clicou no 3° botão!')
+        function jan1(evento){
+            var bu = evento.currentTarget.id
+
+            alert(`Você pressionou o ${bu} botão.`)
         }
 
     </script>

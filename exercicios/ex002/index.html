@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        header > h1 {
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            background-color: rgb(74, 118, 252);
+        }
+
+        section {
+            background-color: white;
+            margin: auto;
+            width: 500px;
+            height: fit-content;
+            border-radius: 10px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        section p {
+            padding: 10px
+        }
+
+        footer > p {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento:
+                <input type="number" name="bday" id="bday">
+            </p>
+            <p>Sexo:
+                <input type="radio" name="radsex" id="mal" checked> <label for="mal">Masculino</label>
+                
+                <input type="radio" name="radsex" id="fem"><label for="fem"> Feminino</label>
+            </p>
+            <p>
+                <input type="button" value=" Verificar " id="ver" onclick="verify()">
+            </p>
+            <p>
+                Preencha os dados acima para ver o resultado!
+            </p>
+        </div>
+        <div>
+            <img id="image" src="" alt="">
+        </div>
+    </section>
+    <footer>
+        <p>© CursoemVideo</p>
+    </footer>
+    <script>
+        function verify() {
+        var mal = document.querySelector('#mal')
+        var fem = document.querySelector('fem')
+        var ver = document.querySelector('#ver')
+        var date = new Date()
+        var year = date.getFullYear()
+        var bday = document.querySelector('#bday')
+        var img = document.querySelector('#image')
+        var yold = year - bday
+
+            if (bday.value.length == 0 || bday.value > year || bday.value < year - 122 ) {
+                alert('Verifique os dados e tente novamente.')
+            } else {
+                alert('Tudo ok')
+            }
+            //10:54 no video
+    }
+    </script>
+</body>
+</html>

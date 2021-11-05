@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País de Origem</title>
+    <style>
+        div {
+            background-color: black;
+            color: whitesmoke;
+            width: 420px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+        <h1>Alfandega</h1>
+        Seu País:<input type="text" id="txtcon">
+        <input type="button" value="Verificar" onclick="calcular()">
+        <div id="res">
+            Resultado
+        </div>
+    <script>
+        function calcular() {
+            var txtcon = document.querySelector('#txtcon')
+            txt = txtcon.value
+            var res = document.querySelector('#res')
+            
+
+
+            if(txt.toLowerCase() == 'brasil') {
+                res.innerHTML = '<p>É brasileiro.</p>'
+            } else {
+                res.innerHTML = '<p>Gringo demais.</p>'
+            }
+        }
+    </script>
+</body>
+</html>
