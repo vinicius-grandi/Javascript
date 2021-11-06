@@ -43,6 +43,10 @@
             color: white;
             padding-top: 20px;
         }
+
+        #foda {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -62,11 +66,9 @@
             <p>
                 <input type="button" value=" Verificar " id="ver" onclick="verify()">
             </p>
-            <p>
-                Preencha os dados acima para ver o resultado!
-            </p>
         </div>
-        <div>
+        <div id="foda">
+            <p id="txtimg">Preencha os dados acima para ver o resultado!</p>
             <img id="image" src="" alt="">
         </div>
     </section>
@@ -82,15 +84,45 @@
         var year = date.getFullYear()
         var bday = document.querySelector('#bday')
         var img = document.querySelector('#image')
-        var yold = year - bday
+        var txtimg = document.querySelector('#txtimg')
+        
 
             if (bday.value.length == 0 || bday.value > year || bday.value < year - 122 ) {
-                alert('Verifique os dados e tente novamente.')
+                alert('[ERRO] Verifique os dados e tente novamente.')
             } else {
-                alert('Tudo ok')
-            }
-            //10:54 no video
-    }
+                var radsex = document.getElementsByName('radsex')
+                var yold = year - bday.value
+                var sex = ""
+                if (radsex[0].checked) {
+                   txtimg.innerHTML=`Você é um homem de ${yold} anos.`
+                   if (yold <=10) {
+                    // Criança
+                       img.src='b-boy-img1.png'
+                   } else if (yold <= 21) {
+                    // Jovem
+                        img.src='y-man-img1.png'
+                   } else if (yold <= 60) {
+                    // Adulto
+                    img.src='o-man-img1.png'
+                   } else {
+                    // Velho
+                   }
+                } else if (radsex[1].checked) {
+                    txtimg.innerHTML=`Você é uma mulher de ${yold} anos.`
+                    if (yold <=10) {
+                    // Criança
+                    img.src='b-girl-img1.png'
+                   } else if (yold <= 21) {
+                    // Jovem
+                    img.src='y-fem-img1.png'
+                   } else if (yold <= 60) {
+                    // Adulto
+                    img.src='o-woman-img2.png'
+                   } else {
+                    // Velho
+                   }
+                }
+            }}
     </script>
 </body>
 </html>
