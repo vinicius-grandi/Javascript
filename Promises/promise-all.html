@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+async function showGitHubUserAndRepos(username) {
+    const url = `https://api.github.com/users/${username}`
+    const responseu = await fetch(url)
+    const responser = await fetch(`${url}/repos`)
+
+    const [user, repos] = await Promise.all([
+    responseu.json(),
+    responser.json()
+  ])
+	
+	console.log(user.name);
+	console.log(repos.length);
+}
+
+showGitHubUserAndRepos('vinicius-grandi')
+</script>
+</html>
