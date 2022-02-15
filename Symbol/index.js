@@ -13,3 +13,7 @@ const obj = {
 }
 
 console.log(obj);
+
+for (const v in obj) {
+  console.log(v, obj[v]);
+}
